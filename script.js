@@ -1,16 +1,10 @@
+const CHOICES = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
   const random = Math.floor(Math.random() * 3);
-  switch (random) {
-    case 0:
-      return "rock";
-    case 1:
-      return "paper";
-    case 2:
-      return "scissors";
-  }
+  return CHOICES[random];
 }
 
 function getHumanChoice() {
@@ -19,7 +13,7 @@ function getHumanChoice() {
     choice = prompt("Please select your choice (rock, paper, or scissors):")
       .trim()
       .toLowerCase();
-  } while (!["rock", "paper", "scissors"].includes(choice));
+  } while (!CHOICES.includes(choice));
   return choice;
 }
 
@@ -28,10 +22,8 @@ function capitalize(word) {
 }
 
 function determineWinner(choice1, choice2) {
-  const options = ["rock", "paper", "scissors"];
-
-  const index1 = options.indexOf(choice1);
-  const index2 = options.indexOf(choice2);
+  const index1 = CHOICES.indexOf(choice1);
+  const index2 = CHOICES.indexOf(choice2);
 
   // normalize the next and previous values to the range of choices
   const next = (index2 + 1 + 3) % 3;
