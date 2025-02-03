@@ -71,6 +71,29 @@ function playRound() {
   }
 }
 
+function playGame() {
+  humanScore = 0;
+  computerScore = 0;
+
+  for (let i = 0; i < 5; i++) {
+    playRound();
+  }
+
+  console.log(`Your score: ${humanScore}`);
+  console.log(`Computer score: ${computerScore}`);
+  console.log("Game result:");
+
+  if (humanScore > computerScore) {
+    console.log("You win the game!");
+  } else if (humanScore < computerScore) {
+    console.log("You lose the game!");
+  } else {
+    console.log("It's a draw!");
+  }
+}
+
 window.onload = () => {
-  console.log("hello");
+  console.log("Rock Paper Scissors");
+  console.log("playGame() to play five rounds");
+  console.log("playRound() to play a single round");
 };
