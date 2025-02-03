@@ -10,6 +10,16 @@ function getComputerChoice() {
   }
 }
 
+function getHumanChoice() {
+  let choice;
+  do {
+    choice = prompt("Please select your choice (rock, paper, or scissors):")
+      .trim()
+      .toLowerCase();
+  } while (!["rock", "paper", "scissors"].includes(choice));
+  return choice;
+}
+
 window.onload = () => {
   console.log("hello");
 };
