@@ -1,6 +1,4 @@
 const CHOICES = ["rock", "paper", "scissors"];
-let humanScore = 0;
-let computerScore = 0;
 
 function getComputerChoice() {
   const random = Math.floor(Math.random() * 3);
@@ -40,32 +38,32 @@ function determineWinner(choice1, choice2) {
   return 0;
 }
 
-function playRound() {
-  const humanChoice = getHumanChoice();
-  const computerChoice = getComputerChoice();
-  const result = determineWinner(humanChoice, computerChoice);
-  switch (result) {
-    case 1:
-      console.log(
-        `You win! ${capitalize(humanChoice)} beats ${computerChoice}`
-      );
-      humanScore += 1;
-      break;
-    case -1:
-      console.log(
-        `You lose! ${capitalize(computerChoice)} beats ${humanChoice}`
-      );
-      computerScore += 1;
-      break;
-    case 0:
-      console.log(`Draw! Both have chosen ${humanChoice}`);
-      break;
-  }
-}
-
 function playGame() {
-  humanScore = 0;
-  computerScore = 0;
+  let humanScore = 0;
+  let computerScore = 0;
+
+  const playRound = () => {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+    const result = determineWinner(humanChoice, computerChoice);
+    switch (result) {
+      case 1:
+        console.log(
+          `You win! ${capitalize(humanChoice)} beats ${computerChoice}`
+        );
+        humanScore += 1;
+        break;
+      case -1:
+        console.log(
+          `You lose! ${capitalize(computerChoice)} beats ${humanChoice}`
+        );
+        computerScore += 1;
+        break;
+      case 0:
+        console.log(`Draw! Both have chosen ${humanChoice}`);
+        break;
+    }
+  };
 
   for (let i = 0; i < 5; i++) {
     playRound();
@@ -86,6 +84,5 @@ function playGame() {
 
 window.onload = () => {
   console.log("Rock Paper Scissors");
-  console.log("playGame() to play five rounds");
-  console.log("playRound() to play a single round");
+  console.log("playGame() to play the game");
 };
