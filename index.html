@@ -3,11 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <h1>Rock Paper Scissors</h1>
-    <p>Use the console to play.</p>
+    <main>
+      <div class="background"></div>
+      <div class="card">
+        <div class="card-border">
+          <div class="border-top"></div>
+          <div class="border-bottom"></div>
+          <div class="border-right"></div>
+          <div class="border-left"></div>
+          <div class="border-top-left"></div>
+          <div class="border-top-right"></div>
+          <div class="border-bottom-left"></div>
+          <div class="border-bottom-right"></div>
+        </div>
+        <div class="card-content">
+          <h1>Rock Paper Scissors</h1>
+          <div id="start">
+            <button class="button-wide" id="start-button">Start Game</button>
+            <button class="button-wide" id="credits-button">Credits</button>
+          </div>
+          <div id="game" style="display: none">
+            <div class="score-div">
+              <p class="score-left">
+                <span>You</span>
+                <span id="score-player">0</span>
+              </p>
+              <p class="score-center">-</p>
+              <p class="score-right">
+                <span id="score-computer">0</span>
+                <span>CPU</span>
+              </p>
+            </div>
+            <div id="buttons">
+              <button class="button-square" id="rock">
+                <img src="assets/images/rock.svg" alt="" />
+              </button>
+              <button class="button-square" id="paper">
+                <img src="assets/images/paper.svg" alt="" />
+              </button>
+              <button class="button-square" id="scissors">
+                <img src="assets/images/scissors.svg" alt="" />
+              </button>
+            </div>
+            <div id="results">
+              <div class="result-boxes">
+                <div class="result-box" id="result-box-left">
+                  <img
+                    src="assets/images/rock.svg"
+                    alt=""
+                    class="result-image"
+                    id="result-image-left"
+                    style="display: none"
+                  />
+                </div>
+                <div class="result-box" id="result-box-right">
+                  <img
+                    src="assets/images/rock.svg"
+                    alt=""
+                    class="result-image"
+                    id="result-image-right"
+                    style="display: none"
+                  />
+                </div>
+              </div>
+              <p id="result-text" style="display: none"></p>
+              <p id="result-text-below" style="display: none"></p>
+              <button id="game-return" class="button-wide">Return</button>
+            </div>
+          </div>
+          <div id="credits" style="display: none">
+            <h2>Credits</h2>
+            <p>
+              <span>Created by</span>
+              <a href="https://github.com">micheldrv</a>
+            </p>
+            <p>
+              <span>Icons by</span>
+              <a href="https://game-icons.net/">John Redman</a>
+              <span>at</span>
+              <a href="https://game-icons.net/">game-icons.net</a>
+            </p>
+            <p>Other graphics by <a href="https://kenney.nl/">Kenney</a></p>
+            <button id="credits-return" class="button-wide">Return</button>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

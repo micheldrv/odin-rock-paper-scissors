@@ -1,0 +1,269 @@
+@keyframes pan {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -384px -192px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  image-rendering: pixelated;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+main {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/images/rps-bg.png");
+  background-position: 0 0;
+  animation: pan 10s infinite linear;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.card {
+  min-width: 25px;
+  min-height: 25px;
+  width: 100%;
+  max-width: 288px;
+  margin: 10px;
+  position: relative;
+}
+
+.card-border {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.border-top-left,
+.border-top-right,
+.border-bottom-left,
+.border-bottom-right {
+  background-image: url("assets/images/border-corner.png");
+  image-rendering: pixelated;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+
+.border-top-left {
+  top: 0;
+  left: 0;
+}
+
+.border-top-right {
+  top: 0;
+  right: 0;
+  rotate: 90deg;
+}
+
+.border-bottom-left {
+  bottom: 0;
+  left: 0;
+  rotate: 270deg;
+}
+
+.border-bottom-right {
+  bottom: 0;
+  right: 0;
+  rotate: 180deg;
+}
+
+.border-top,
+.border-bottom,
+.border-left,
+.border-right {
+  image-rendering: pixelated;
+  position: absolute;
+}
+
+.border-top,
+.border-bottom {
+  background-image: url("assets/images/border-edge-horizontal.png");
+  left: 12px;
+  right: 12px;
+  height: 6px;
+}
+
+.border-left,
+.border-right {
+  background-image: url("assets/images/border-edge-vertical.png");
+  top: 12px;
+  bottom: 12px;
+  width: 6px;
+}
+
+.border-top {
+  top: 2px;
+}
+
+.border-bottom {
+  bottom: 2px;
+}
+
+.border-left {
+  left: 2px;
+}
+
+.border-right {
+  right: 2px;
+}
+
+.card-content {
+  margin: 8px;
+  padding: 24px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.button-wide {
+  width: 128px;
+  height: 32px;
+  background-image: url("assets/images/button-wide.png");
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  image-rendering: pixelated;
+}
+
+#buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.button-square {
+  width: 64px;
+  height: 64px;
+  background-image: url("assets/images/button-square.png");
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  image-rendering: pixelated;
+}
+
+.button-wide:hover,
+.button-square:hover {
+  background-color: hsl(0, 0%, 90%);
+}
+
+.button-wide:focus,
+.button-square:focus {
+  outline-offset: 2px;
+  outline: 2px solid black;
+}
+
+.button-wide[disabled],
+.button-square[disabled] {
+  background-color: hsl(0, 0%, 85%);
+}
+
+.button-square img {
+  width: 48px;
+  height: 48px;
+}
+
+#start,
+#game,
+#credits,
+#results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.score-div {
+  display: flex;
+  gap: 12px;
+}
+
+.score-left {
+  text-align: right;
+  flex: 1;
+  display: flex;
+  gap: 6px;
+}
+
+.score-right {
+  text-align: left;
+  flex: 1;
+  display: flex;
+  gap: 6px;
+}
+
+.result-boxes {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-box {
+  width: 64px;
+  height: 64px;
+  background-image: url("assets/images/button-square.png");
+  image-rendering: pixelated;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-image {
+  width: 48px;
+  height: 48px;
+}
+
+#result-image-right {
+  transform: scaleX(-1);
+}
+
+@keyframes result-left {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: -45deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes result-right {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 45deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
